@@ -19,4 +19,4 @@ git submodule update --init --recursive
 
 ## Check for $AEM_DIR_CORE
 # https://stackoverflow.com/q/3601515
-if [ -z "${AEM_DIR_CORE:-}" ]; then echo "AEM_DIR_CORE is unset"; else echo "AEM_DIR_CORE is set to '$AEM_DIR_CORE'"; fi
+if [ -z "/home/moe/Desktop/work/em-core:-}" ]; then echo "AEM_DIR_CORE is unset"; else echo "AEM_DIR_CORE is set to '/home/moe/Desktop/work/em-core'"; fi

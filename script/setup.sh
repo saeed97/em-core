@@ -5,14 +5,14 @@
 # or set it back to the initial first unused state.
 
 ####### DOWNLOAD FAA Aircraft Registry
-
+AEM_DIR_CORE = '/home/moe/Desktop/work/em-core'
 URL_AIRCRAFT_REG='http://registry.faa.gov/database/ReleasableAircraft.zip'
 
 # Download file from FAA website
-wget $URL_AIRCRAFT_REG -O $AEM_DIR_CORE/data/FAA-AircraftRegistry/faa_acreg_current.zip
+wget $URL_AIRCRAFT_REG -O /home/moe/Desktop/work/em-core/data/FAA-AircraftRegistry/faa_acreg_current.zip
 
 # unzip all files
-unzip -j -o $AEM_DIR_CORE/data/FAA-AircraftRegistry/faa_acreg_current.zip -d $AEM_DIR_CORE/data/FAA-AircraftRegistry/
+unzip -j -o /home/moe/Desktop/work/em-core/data/FAA-AircraftRegistry/faa_acreg_current.zip -d /home/moe/Desktop/work/em-core/data/FAA-AircraftRegistry/
 
 ####### DOWNLOAD FAA Aircraft Characteristics Database
 # https://www.faa.gov/airports/engineering/aircraft_char_database/
@@ -20,7 +20,7 @@ unzip -j -o $AEM_DIR_CORE/data/FAA-AircraftRegistry/faa_acreg_current.zip -d $AE
 URL_AIRCRAFT_DB='https://www.faa.gov/airports/engineering/aircraft_char_database/media/FAA-Aircraft-Char-Database-v2-201810.xlsx'
 
 # Download file from FAA website
-wget $URL_AIRCRAFT_DB -O $AEM_DIR_CORE/data/FAA-AircraftCharacteristicsDB/faa_acdb_current.xlsx
+wget $URL_AIRCRAFT_DB -O /home/moe/Desktop/work/em-core/data/FAA-AircraftCharacteristicsDB/faa_acdb_current.xlsx
 
 
 ###### DOWNLOAD FAA AIRPORTS
@@ -28,20 +28,20 @@ wget $URL_AIRCRAFT_DB -O $AEM_DIR_CORE/data/FAA-AircraftCharacteristicsDB/faa_ac
 URL_AIRPORTS='https://opendata.arcgis.com/datasets/e747ab91a11045e8b3f8a3efd093d3b5_0.zip'
 
 # Download file
-wget $URL_AIRPORTS -O $AEM_DIR_CORE/data/FAA-Airports/faa_airports_current.zip
+wget $URL_AIRPORTS -O /home/moe/Desktop/work/em-core/data/FAA-Airports/faa_airports_current.zip
 
 # unzip all files
-unzip -j -o $AEM_DIR_CORE/data/FAA-Airports/faa_airports_current.zip -d $AEM_DIR_CORE/data/FAA-Airports/
+unzip -j -o /home/moe/Desktop/work/em-core/data/FAA-Airports/faa_airports_current.zip -d /home/moe/Desktop/work/em-core/data/FAA-Airports/
 
 ####### DOWNLOAD FAA DOF
 
 URL_DOF='https://aeronav.faa.gov/Obst_Data/DAILY_DOF_DAT.ZIP'
 
 # Download file from FAA website
-wget $URL_DOF -O $AEM_DIR_CORE/data/FAA-DOF/faa_dof_current.zip
+wget $URL_DOF -O /home/moe/Desktop/work/em-core/data/FAA-DOF/faa_dof_current.zip
 
 # unzip all files
-unzip -j -o $AEM_DIR_CORE/data/FAA-DOF/faa_dof_current.zip -d $AEM_DIR_CORE/data/FAA-DOF/
+unzip -j -o /home/moe/Desktop/work/em-core/data/FAA-DOF/faa_dof_current.zip -d /home/moe/Desktop/work/em-core/data/FAA-DOF/
 
 ####### DOWNLOAD FAA 28 DAY NASR SUBSCRIPTION
 
@@ -56,13 +56,13 @@ URL_NASR_EDITION='https://soa.smext.faa.gov/apra/nfdc/nasr/chart?edition=current
 URL_NASR_CURRENT=$(curl -s $URL_NASR_EDITION | xpath -q -e 'string(//productSet/edition/product/@url)')
 
 # Download file from FAA website
-wget $URL_NASR_CURRENT -O $AEM_DIR_CORE/data/FAA-NASR/faa_nasr_current.zip
+wget $URL_NASR_CURRENT -O /home/moe/Desktop/work/em-core/data/FAA-NASR/faa_nasr_current.zip
 
 # unzip only airspace class shape files
 # -j strips all path info, and all files go into the target 
 # -o to silently force overwrite
 # https://unix.stackexchange.com/a/59285/1408
-unzip -j -o $AEM_DIR_CORE/data/FAA-NASR/faa_nasr_current.zip 'Additional_Data/Shape_Files/*' -d $AEM_DIR_CORE/data/FAA-NASR/
+unzip -j -o /home/moe/Desktop/work/em-core/data/FAA-NASR/faa_nasr_current.zip 'Additional_Data/Shape_Files/*' -d /home/moe/Desktop/work/em-core/data/FAA-NASR/
 
 ####### DOWNLOAD NATURAL EARTH DATA INTERNAL ADMINISTRATIVE BOUNDARIES
 # https://www.naturalearthdata.com/
@@ -71,12 +71,12 @@ unzip -j -o $AEM_DIR_CORE/data/FAA-NASR/faa_nasr_current.zip 'Additional_Data/Sh
 URL_NE_admin1='https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_1_states_provinces.zip'
 
 # Download file from Natural Earth Data - Admin
-wget $URL_NE_admin1 -O $AEM_DIR_CORE/data/NE-Adminstrative/ne_admin1_current.zip
+wget $URL_NE_admin1 -O /home/moe/Desktop/work/em-core/data/NE-Adminstrative/ne_admin1_current.zip
 
 # unzip
 # -o to silently force overwrite
 # https://unix.stackexchange.com/a/59285/1408
-unzip -o $AEM_DIR_CORE/data/NE-Adminstrative/ne_admin1_current.zip -d $AEM_DIR_CORE/data/NE-Adminstrative/
+unzip -o /home/moe/Desktop/work/em-core/data/NE-Adminstrative/ne_admin1_current.zip -d /home/moe/Desktop/work/em-core/data/NE-Adminstrative/
 
 ####### DOWNLOAD NATURAL EARTH DATA OCEAN POLYGONS
 # https://www.naturalearthdata.com/
@@ -85,22 +85,22 @@ unzip -o $AEM_DIR_CORE/data/NE-Adminstrative/ne_admin1_current.zip -d $AEM_DIR_C
 URL_NE_ocean='https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_ocean.zip'
 
 # Download file from Natural Earth Data - Admin
-wget $URL_NE_ocean -O $AEM_DIR_CORE/data/NE-Ocean/ne_land_ocean.zip
+wget $URL_NE_ocean -O /home/moe/Desktop/work/em-core/data/NE-Ocean/ne_land_ocean.zip
 
 # unzip
 # -o to silently force overwrite
 # https://unix.stackexchange.com/a/59285/1408
-unzip -o $AEM_DIR_CORE/data/NE-Ocean/ne_land_ocean.zip -d $AEM_DIR_CORE/data/NE-Ocean/
+unzip -o /home/moe/Desktop/work/em-core/data/NE-Ocean/ne_land_ocean.zip -d /home/moe/Desktop/work/em-core/data/NE-Ocean/
 
 ####### DOWNLOAD NOAA GLOBE tiles
 # https://www.ngdc.noaa.gov/mgg/topo/gltiles.html
 URL_NOAA_GLOBE='https://www.ngdc.noaa.gov/mgg/topo/DATATILES/elev/all10g.zip'
 
 # Download file 
-wget $URL_NOAA_GLOBE -O $AEM_DIR_CORE/data/DEM-GLOBE/noaa_globe_current.zip
+wget $URL_NOAA_GLOBE -O /home/moe/Desktop/work/em-core/data/DEM-GLOBE/noaa_globe_current.zip
 
 # unzip
-unzip -j -o $AEM_DIR_CORE/data/DEM-GLOBE/noaa_globe_current.zip -d $AEM_DIR_CORE/data/DEM-GLOBE/
+unzip -j -o /home/moe/Desktop/work/em-core/data/DEM-GLOBE/noaa_globe_current.zip -d /home/moe/Desktop/work/em-core/data/DEM-GLOBE/
 
 ####### DOWNLOAD NOAA GLOBE ESRI HEADERS
 URL_GLOBE_HDR='ngdc.noaa.gov/mgg/topo/elev/esri/hdr'
@@ -116,7 +116,7 @@ IFS=:
 i=0
 for hdr in $globehdr; do
 	URL_CURRENT=$URL_GLOBE_HDR/$hdr.hdr
-	FILE_DOWNLOAD=$AEM_DIR_CORE/data/DEM-GLOBE/$hdr.hdr
+	FILE_DOWNLOAD=/home/moe/Desktop/work/em-core/data/DEM-GLOBE/$hdr.hdr
 
 	echo $URL_CURRENT
 	echo $FILE_DOWNLOAD
